@@ -1,2 +1,2 @@
-web: vendor/bin/heroku-php-apache2 public/
+web:ts-node/src/config/server.ts
 

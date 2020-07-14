@@ -1,12 +1,13 @@
 import { ApolloServer } from "apollo-server-express";
 import * as cors from "cors";
 import * as express from "express";
+import cool from 'cool-ascii-faces';
 
 import resolvers from "#root/graphql/resolvers";
 import typeDefs from "#root/graphql/typeDefs";
 import accessEnv from "#root/helpers/accessEnv";
 
-const PORT = accessEnv("PORT", 7000);
+const PORT = accessEnv("PORT", 5000);
 
 const apolloServer = new ApolloServer({ resolvers, typeDefs });
 
@@ -28,6 +29,6 @@ app.use(
 
 apolloServer.applyMiddleware({ app, path: "/graphql" });
 
-app.listen(PORT, "0.0.0.0", () => {
+app.listen(PORT, "", () => {
   console.info(`BMS service listening on ${PORT}`);
 });
